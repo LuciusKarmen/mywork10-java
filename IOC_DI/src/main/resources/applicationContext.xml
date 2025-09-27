@@ -4,16 +4,23 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- 在这里配置你的 bean -->
+    <!-- 在这里配置你的 bean  -->
     <!-- spring的容器对象帮我创建对象   -->
     <!-- <bean id="..." class="..." /> -->
-    <bean id="bookdao1" class="org.example.dao.UseDaoImpl"></bean>
+    <bean id="bookdao1" name="daodao" class="org.example.dao.UseDaoImpl" scope="singleton" init-method="init" destroy-method="destory"></bean>
+    <!-- name就是完全改名字   -->
     <bean id="bookservice1" class="org.example.service.UseServiceImpl">
         <!-- DI 依赖注入，service和 dao 的关系 -->
         <property name="dao" ref="bookdao1"></property>
-        <!-- property是属性       -->
+        <!-- name是传进来的参数名   -->
+        <!-- property是属性   -->
         <!--  useDao的名字就是 private UseDao dao;的名字     -->
         <!-- ref 是实例的名字     -->
     </bean>
+    <bean id="Shop" class="org.example.service.ShopServiceImpl" autowire="byName">
+        <constructor-arg name="dao" index="0" ref="bookdao1"></constructor-arg>
+        <constructor-arg name="age" type="int" index="1" value="1"></constructor-arg>
+    </bean>
 
+<!-- autowire="" 自动装配 -->
 </beans>
