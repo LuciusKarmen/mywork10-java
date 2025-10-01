@@ -12,7 +12,10 @@ import org.springframework.stereotype.Component;
 public class MyAdvice {
 
     //4.设置切入点fn
+    //方法一
     @Pointcut("execution(void org.example.dao.UseDaoImpl.save())")
+    //方法二
+//    @Pointcut("execution(void org.example.dao.UseDao.save())")
     private void fn(){}
 
 
