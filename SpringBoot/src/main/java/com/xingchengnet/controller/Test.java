@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/user")
 public class Test {
-
+    
     @GetMapping("/{id}")
     public String getID(@PathVariable Integer id){
         System.out.println("id==>"+id);

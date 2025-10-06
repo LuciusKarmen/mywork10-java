@@ -1,0 +1,13 @@
+lesson: SpringBoot
+
+server:
+  port: 88
+
+enterprise:
+  name: itcasts
+  age: 16
+  tel: 18329183547
+  subject:
+    - Java
+    - JS
+    - Docker
