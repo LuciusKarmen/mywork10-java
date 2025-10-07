@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: xgm
+  # 👇 开发时临时设为 dev，提交代码前确认！
+  profiles:
+    active: test   # 默认激活 dev 环境（本地开发用）
