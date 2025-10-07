@@ -1,0 +1,10 @@
+# 公共配置
+server:
+  port: 8080   # 默认端口
+
+lesson: SpringBoot
+
+# 指定当前激活哪个环境（开发时可临时指定，打包后通常通过启动参数指定）
+spring:
+  profiles:
+    active: prod   # 默认使用 dev 环境

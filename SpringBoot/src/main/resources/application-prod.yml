@@ -1,0 +1,14 @@
+server:
+  port: 80   # 生产环境通常用 80 或 443
+
+enterprise:
+  name: itcasts-prod
+  tel: 400-123-4567
+
+logging:
+  level:
+    com.example: info   # 生产环境减少日志量
+
+management:
+  endpoints:
+    enabled-by-default: false  # 关闭监控端点，更安全

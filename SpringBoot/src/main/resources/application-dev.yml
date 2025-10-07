@@ -1,0 +1,10 @@
+server:
+  port: 8888   # 开发用 8888 端口
+
+enterprise:
+  name: itcasts-dev
+  tel: 110
+
+logging:
+  level:
+    com.example: debug   # 开发时打印详细日志

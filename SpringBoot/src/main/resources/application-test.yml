@@ -1,0 +1,7 @@
+server:
+  port: 9999
+
+enterprise:
+  name: itcasts-test
+  tel: 123456789
+
