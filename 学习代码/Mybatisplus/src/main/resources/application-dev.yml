@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/mp
+    url: jdbc:mysql://localhost:3306/mp_dev
     username: xuguangming
     password: 13952803647x
     driver-class-name: com.mysql.cj.jdbc.Driver

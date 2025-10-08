@@ -1,5 +1,7 @@
 package org.example.mybatisplus;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.example.mybatisplus.dao.UserDao;
 import org.example.mybatisplus.pojo.User;
 import org.junit.jupiter.api.Test;
@@ -42,14 +44,22 @@ class MybatisplusApplicationTests {
     //增
     @Test
     void add(){
-        User a=new User();
-        a.setId(0);
-        a.setAge(0);
-        a.setName("test");
-        userDao.insert(a);
+        for (int i = 0; i < 10; i++) {
+            User a=new User();
+            a.setId(0);
+            a.setAge(0);
+            a.setName("test");
+            userDao.insert(a);
+        }
 
     }
     //分页查询
     @Test
+    void testGetByPage(){
+        IPage page=new Page(1,10);
+        userDao.selectPage(page,null);
+        System.out.println(page.getCurrent());
+
+    }
 
 }
