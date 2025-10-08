@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Bean;
 
 public class MpConfig {
     
-    @Bean
+//    @Bean
     //拦截器
 
 }
