@@ -2,6 +2,7 @@ package org.example.mybatisplus.pojo;
 
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.Version;
 
 @TableName("user")
 public class User {
@@ -29,12 +30,25 @@ public class User {
         return name;
     }
 
+    public int getVersion() {
+        return version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
+    }
+
+    //乐观锁
+    @Version
+    private int version;
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", age=" + age +
                 ", name='" + name + '\'' +
+                ", version=" + version +
                 '}';
     }
 
