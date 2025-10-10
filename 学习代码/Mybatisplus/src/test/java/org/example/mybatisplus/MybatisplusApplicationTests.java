@@ -1,5 +1,7 @@
 package org.example.mybatisplus;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.example.mybatisplus.dao.UserDao;
@@ -8,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootTest
@@ -61,5 +64,25 @@ class MybatisplusApplicationTests {
         System.out.println(page.getCurrent());
 
     }
+    //条件查询
+    @Test
+    void sectionConditional(){
+        QueryWrapper<User> q=new QueryWrapper<>();
+        q.eq("name","xgm");
+        List<User> a= userDao.selectList(q);
+        System.out.println(a);
+    }
+    @Test
+    void testQueryByLambdaWrapper() {
+        LambdaQueryWrapper<User> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(User::getName, "xgm");     // 使用方法引用，不会写错字段
+
+
+        List<User> users = userDao.selectList(wrapper);
+        System.out.println(users);
+    }
+
+
+
 
 }

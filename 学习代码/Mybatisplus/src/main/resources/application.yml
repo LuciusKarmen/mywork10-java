@@ -4,3 +4,13 @@ spring:
   # 👇 开发时临时设为 dev，提交代码前确认！
   profiles:
     active: dev   # 默认激活 dev 环境（本地开发用）
+
+
+logging:
+  file:
+    name: logs/app.log        # 日志文件路径
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+#   直接写logback.xml也是可以的，属于特殊配置
